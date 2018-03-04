@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Beausoft Bolg</title>
+  
+  <subtitle>嘿嘿</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://beausoft.github.io/"/>
+  <updated>2018-03-03T05:42:21.493Z</updated>
+  <id>https://beausoft.github.io/</id>
+  
+  <author>
+    <name>呵呵</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://beausoft.github.io/2018/03/04/hello-world/"/>
+    <id>https://beausoft.github.io/2018/03/04/hello-world/</id>
+    <published>2018-03-04T04:51:30.909Z</published>
+    <updated>2018-03-03T05:42:21.493Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>测试1</title>
+    <link href="https://beausoft.github.io/2018/03/03/%E6%B5%8B%E8%AF%951/"/>
+    <id>https://beausoft.github.io/2018/03/03/测试1/</id>
+    <published>2018-03-03T07:24:29.000Z</published>
+    <updated>2018-03-04T10:21:27.182Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h1 id="阿斯擦擦色彩"><a href="#阿斯擦擦色彩" class="headerlink" title="阿斯擦擦色彩"></a>阿斯擦擦色彩</h1><p>[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://discord.gg/teM2Anj" alt="Build Status](https://travis-ci.org/hexojs/hexo.svg?branch=master)](https://travis-ci.org/hexojs/hexo)  [![NPM version](https://badge.fury.io/js/hexo.svg)](http://badge.fury.io/js/hexo) [![Coverage Status](https://coveralls.io/repos/hexojs/hexo/badge.svg?branch=master)](https://coveralls.io/r/hexojs/hexo?branch=master) [![Build status](https://ci.appveyor.com/api/projects/status/hpx3lduqjj2t6uqq/branch/master?svg=true)](https://ci.appveyor.com/project/tommy351/hexo/branch/master) [![Gitter](https://badges.gitter.im/hexojs/hexo.svg)](https://gitter.im/hexojs/hexo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Discord Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)" title="">                </div>                <div class="image-caption">Build Status](https://travis-ci.org/hexojs/hexo.svg?branch=master)](https://travis-ci.org/hexojs/hexo)  [![NPM version](https://badge.fury.io/js/hexo.svg)](http://badge.fury.io/js/hexo) [![Coverage Status](https://coveralls.io/repos/hexojs/hexo/badge.svg?branch=master)](https://coveralls.io/r/hexojs/hexo?branch=master) [![Build status](https://ci.appveyor.com/api/projects/status/hpx3lduqjj2t6uqq/branch/master?svg=true)](https://ci.appveyor.com/project/tommy351/hexo/branch/master) [![Gitter](https://badges.gitter.im/hexojs/hexo.svg)](https://gitter.im/hexojs/hexo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Discord Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)</div>            </figure></p><p>A fast, simple &amp; powerful blog framework, powered by <a href="http://nodejs.org" target="_blank" rel="noopener">Node.js</a>.</p><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul><li>Blazing fast generating</li><li>Support for GitHub Flavored Markdown and most Octopress plugins</li><li>One-command deploy to GitHub Pages, Heroku, etc.</li><li>Powerful plugin system</li></ul><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p><strong>Setup your blog</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure><p><strong>Start the server</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p><strong>Create a new post</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Hello Hexo"</span></span><br></pre></td></tr></table></figure><p><strong>Generate static files</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><h2 id="More-Information"><a href="#More-Information" class="headerlink" title="More Information"></a>More Information</h2><ul><li>Visit the <a href="https://github.com/hexojs/awesome-hexo" target="_blank" rel="noopener">Awesome Hexo</a> list</li><li>Read the <a href="https://hexo.io/" target="_blank" rel="noopener">documentation</a></li><li>Find solutions in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a></li><li>Join discussion on <a href="https://groups.google.com/group/hexo" target="_blank" rel="noopener">Google Group</a></li><li>See the <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">plugin list</a> and the <a href="https://hexo.io/themes/" target="_blank" rel="noopener">theme list</a> on wiki</li><li>Follow <a href="https://twitter.com/hexojs" target="_blank" rel="noopener">@hexojs</a> for latest news</li></ul><h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h1&gt;&lt;h1 id=&quot;阿斯擦擦色彩&quot;&gt;&lt;a href=&quot;#阿斯擦擦色彩&quot; class=&quot;headerlink&quot; title=&quot;阿斯擦擦色
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
