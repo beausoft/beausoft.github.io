@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/index.html">
 <meta property="og:site_name" content="Beausoft Bolg">
 <meta property="og:description" content="首先我们先来看如下代码示例： 12345678public class Test_1 &amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(0.06+0.01);        System.out.println(1.0-0.42);        System.out.println(">
-<meta property="og:updated_time" content="2018-03-06T14:59:25.982Z">
+<meta property="og:updated_time" content="2018-03-06T15:25:07.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用BigDecimal进行精确运算">
 <meta name="twitter:description" content="首先我们先来看如下代码示例： 12345678public class Test_1 &amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(0.06+0.01);        System.out.println(1.0-0.42);        System.out.println(">
@@ -141,6 +141,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
             
         </h5>
     </div>
@@ -163,6 +165,8 @@
             <time class="post-time" title="2018-03-06 22:59:07" datetime="2018-03-06T14:59:07.000Z"  itemprop="datePublished">2018-03-06</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
             
@@ -226,7 +230,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-06T14:59:25.982Z" itemprop="dateUpdated">2018-03-06 22:59:25</time>
+    Last updated: <time datetime="2018-03-06T15:25:07.081Z" itemprop="dateUpdated">2018-03-06 23:25:07</time>
 </span><br>
 
 
@@ -457,6 +461,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

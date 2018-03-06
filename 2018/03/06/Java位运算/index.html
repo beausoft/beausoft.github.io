@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/0549DB08D23840CD8FE15B66B0712306/3083">
 <meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/C11DAF8FB90E413A976D047A5A07360B/3085">
 <meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/6047F004EA3B43AFAB39683BA72E13A4/3163">
-<meta property="og:updated_time" content="2018-03-06T15:00:35.654Z">
+<meta property="og:updated_time" content="2018-03-06T15:24:40.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java位运算">
 <meta name="twitter:description" content="二进制与十进制间的转换方法因为位运算是对二进制数进行操作，所以先来熟悉一下十进制与二进制之间的转换方法。 正整数的十进制转换二进制要点：==除二取余，倒序排列== 解释：将一个十进制数除以二，得到的商再除以二，依此类推直到商等于一或零时为止，倒取将除得的余数，即换算为二进制数的结果 例如把52换算成二进制数，计算结果如图：">
@@ -147,6 +147,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
             
         </h5>
     </div>
@@ -176,6 +178,8 @@
             <time class="post-time" title="2018-03-06 23:00:14" datetime="2018-03-06T15:00:14.000Z"  itemprop="datePublished">2018-03-06</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
             
@@ -388,7 +392,7 @@ a 的值是129，转换成二进制就是10000001，而b 的值是128，转换�
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-06T15:00:35.654Z" itemprop="dateUpdated">2018-03-06 23:00:35</time>
+    Last updated: <time datetime="2018-03-06T15:24:40.674Z" itemprop="dateUpdated">2018-03-06 23:24:40</time>
 </span><br>
 
 
@@ -619,6 +623,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

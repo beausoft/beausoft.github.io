@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://beausoft.github.io/2018/03/06/Math各个函数/index.html">
 <meta property="og:site_name" content="Beausoft Bolg">
 <meta property="og:description" content="Math.E常量，比任何其他值都更接近 e（即自然对数的底数）的 double 值。 Math.PI常量，比任何其他值都更接近 pi（即圆的周长与直径之比）的 double 值。  Math.random返回带正号的 double 值，该值大于等于 0.0 且小于 1.0。返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。 第一次调用该方法时，它将创建一个新的伪随机数生成器，与以下表达式完全">
-<meta property="og:updated_time" content="2018-03-06T14:58:48.891Z">
+<meta property="og:updated_time" content="2018-03-06T15:24:51.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Math各个函数">
 <meta name="twitter:description" content="Math.E常量，比任何其他值都更接近 e（即自然对数的底数）的 double 值。 Math.PI常量，比任何其他值都更接近 pi（即圆的周长与直径之比）的 double 值。  Math.random返回带正号的 double 值，该值大于等于 0.0 且小于 1.0。返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。 第一次调用该方法时，它将创建一个新的伪随机数生成器，与以下表达式完全">
@@ -141,6 +141,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
             
         </h5>
     </div>
@@ -170,6 +172,8 @@
             <time class="post-time" title="2018-03-06 22:58:25" datetime="2018-03-06T14:58:25.000Z"  itemprop="datePublished">2018-03-06</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
             
@@ -305,7 +309,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-06T14:58:48.891Z" itemprop="dateUpdated">2018-03-06 22:58:48</time>
+    Last updated: <time datetime="2018-03-06T15:24:51.039Z" itemprop="dateUpdated">2018-03-06 23:24:51</time>
 </span><br>
 
 
@@ -536,6 +540,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

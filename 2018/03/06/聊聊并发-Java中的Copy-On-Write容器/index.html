@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://beausoft.github.io/2018/03/06/聊聊并发-Java中的Copy-On-Write容器/index.html">
 <meta property="og:site_name" content="Beausoft Bolg">
 <meta property="og:description" content="Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。">
-<meta property="og:updated_time" content="2018-03-06T14:54:01.361Z">
+<meta property="og:updated_time" content="2018-03-06T15:25:01.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊并发-Java中的Copy-On-Write容器">
 <meta name="twitter:description" content="Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。">
@@ -141,6 +141,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
             
         </h5>
     </div>
@@ -163,6 +165,8 @@
             <time class="post-time" title="2018-03-06 22:48:06" datetime="2018-03-06T14:48:06.000Z"  itemprop="datePublished">2018-03-06</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
             
@@ -209,7 +213,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-06T14:54:01.361Z" itemprop="dateUpdated">2018-03-06 22:54:01</time>
+    Last updated: <time datetime="2018-03-06T15:25:01.185Z" itemprop="dateUpdated">2018-03-06 23:25:01</time>
 </span><br>
 
 
@@ -440,6 +444,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

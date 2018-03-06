@@ -173,6 +173,8 @@
       <time class="post-time" title="2018-03-06 23:01:08" datetime="2018-03-06T15:01:08.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -205,6 +207,8 @@
       <time class="post-time" title="2018-03-06 23:00:14" datetime="2018-03-06T15:00:14.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -237,6 +241,8 @@
       <time class="post-time" title="2018-03-06 22:59:07" datetime="2018-03-06T14:59:07.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -269,6 +275,8 @@
       <time class="post-time" title="2018-03-06 22:58:25" datetime="2018-03-06T14:58:25.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -301,6 +309,8 @@
       <time class="post-time" title="2018-03-06 22:50:33" datetime="2018-03-06T14:50:33.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -333,6 +343,8 @@
       <time class="post-time" title="2018-03-06 22:48:06" datetime="2018-03-06T14:48:06.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -365,6 +377,8 @@
       <time class="post-time" title="2018-03-06 22:41:28" datetime="2018-03-06T14:41:28.000Z"  itemprop="datePublished">2018-03-06</time>
 
       
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
     </div>
@@ -507,6 +521,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

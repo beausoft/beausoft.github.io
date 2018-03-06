@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://beausoft.github.io/2018/03/06/并发工具类（一）等待多线程完成的CountDownLatch/index.html">
 <meta property="og:site_name" content="Beausoft Bolg">
 <meta property="og:description" content="简介 CountDownLatch 允许一个或多个线程等待其他线程完成操作。 应用场景 假如有这样一个需求，当我们需要解析一个Excel里多个sheet的数据时，可以考虑使用多线程，每个线程解析一个sheet里的数据，等到所有的sheet都解析完之后，程序需要提示解析完成。在这个需求中，要实现主线程等待所有线程完成sheet的解析操作，最简单的做法是使用join。代码如下： 12345678910">
-<meta property="og:updated_time" content="2018-03-06T14:53:48.785Z">
+<meta property="og:updated_time" content="2018-03-06T15:24:55.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并发工具类（一）等待多线程完成的CountDownLatch">
 <meta name="twitter:description" content="简介 CountDownLatch 允许一个或多个线程等待其他线程完成操作。 应用场景 假如有这样一个需求，当我们需要解析一个Excel里多个sheet的数据时，可以考虑使用多线程，每个线程解析一个sheet里的数据，等到所有的sheet都解析完之后，程序需要提示解析完成。在这个需求中，要实现主线程等待所有线程完成sheet的解析操作，最简单的做法是使用join。代码如下： 12345678910">
@@ -141,6 +141,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
             
         </h5>
     </div>
@@ -163,6 +165,8 @@
             <time class="post-time" title="2018-03-06 22:41:28" datetime="2018-03-06T14:41:28.000Z"  itemprop="datePublished">2018-03-06</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
 
 
             
@@ -197,7 +201,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-06T14:53:48.785Z" itemprop="dateUpdated">2018-03-06 22:53:48</time>
+    Last updated: <time datetime="2018-03-06T15:24:55.854Z" itemprop="dateUpdated">2018-03-06 23:24:55</time>
 </span><br>
 
 
@@ -421,6 +425,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 
