@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>使用BigDecimal进行精确运算 | Beausoft Bolg | 嘿嘿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="首先我们先来看如下代码示例： 12345678public class Test_1 &amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(0.06+0.01);        System.out.println(1.0-0.42);        System.out.println(">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用BigDecimal进行精确运算">
+<meta property="og:url" content="https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/index.html">
+<meta property="og:site_name" content="Beausoft Bolg">
+<meta property="og:description" content="首先我们先来看如下代码示例： 12345678public class Test_1 &amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(0.06+0.01);        System.out.println(1.0-0.42);        System.out.println(">
+<meta property="og:updated_time" content="2018-03-06T14:59:25.982Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用BigDecimal进行精确运算">
+<meta name="twitter:description" content="首先我们先来看如下代码示例： 12345678public class Test_1 &amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(0.06+0.01);        System.out.println(1.0-0.42);        System.out.println(">
+    
+        <link rel="alternate" type="application/atom+xml" title="Beausoft Bolg" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">呵呵</h5>
+          <a href="mailto:546168949@163.com" title="546168949@163.com" class="mail">546168949@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/beausoft" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用BigDecimal进行精确运算</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">使用BigDecimal进行精确运算</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-06T14:59:07.000Z" itemprop="datePublished" class="page-time">
+  2018-03-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-使用BigDecimal进行精确运算"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用BigDecimal进行精确运算</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-06 22:59:07" datetime="2018-03-06T14:59:07.000Z"  itemprop="datePublished">2018-03-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>首先我们先来看如下代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test_1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="number">0.06</span>+<span class="number">0.01</span>);</span><br><span class="line">        System.out.println(<span class="number">1.0</span>-<span class="number">0.42</span>);</span><br><span class="line">        System.out.println(<span class="number">4.015</span>*<span class="number">100</span>);</span><br><span class="line">        System.out.println(<span class="number">303.1</span>/<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<pre><code>0.06999999999999999
+
+0.5800000000000001
+
+401.49999999999994
+
+0.30310000000000004
+</code></pre><p>你认为你看错了，但结果却是是这样的。问题在哪里呢？原因在于我们的计算机是二进制的。浮点数没有办法是用二进制进行精确表示。我们的CPU表示浮点数由两个部分组成：指数和尾数，这样的表示方法一般都会失去一定的精确度，有些浮点数运算也会产生一定的误差。如：2.4的二进制表示并非就是精确的2.4。反而最为接近的二进制表示是 2.3999999999999999。浮点数的值实际上是由一个特定的数学公式计算得到的。</p>
+<p>其实java的float只能用来进行科学计算或工程计算，在大多数的商业计算中，一般采用java.math.BigDecimal类来进行精确计算。</p>
+<p>在使用BigDecimal类来进行计算的时候，主要分为以下步骤：</p>
+<ol>
+<li><p>用float或者double变量构建BigDecimal对象。</p>
+</li>
+<li><p>通过调用BigDecimal的加，减，乘，除等相应的方法进行算术运算。</p>
+</li>
+<li><p>把BigDecimal对象转换成float，double，int等类型。</p>
+</li>
+</ol>
+<p>一般来说，可以使用BigDecimal的构造方法或者静态方法的valueOf()方法把基本类型的变量构建成BigDecimal对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//BigDecimal b1 = new BigDecimal(Double.toString(0.48));</span></span><br><span class="line">BigDecimal b2 = BigDecimal.valueOf(<span class="number">0.48</span>);</span><br></pre></td></tr></table></figure>
+<p>对于常用的加，减，乘，除，BigDecimal类提供了相应的成员方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">add</span><span class="params">(BigDecimal value)</span></span>;  <span class="comment">//加法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">subtract</span><span class="params">(BigDecimal value)</span></span>; <span class="comment">//减法 </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">multiply</span><span class="params">(BigDecimal value)</span></span>; <span class="comment">//乘法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">divide</span><span class="params">(BigDecimal value)</span></span>; <span class="comment">//除法</span></span><br></pre></td></tr></table></figure>
+<p>进行相应的计算后，我们可能需要将BigDecimal对象转换成相应的基本数据类型的变量，可以使用floatValue()，doubleValue()等方法。</p>
+<p><strong><em>注意：</em></strong></p>
+<p>这里有个陷阱，当你使用new BigDecimal(Double d) 时，得到的BigDecimal中的long值并不是精确，详情可查源码，可追溯到native long doubleToRawLongBits(double value)；<br>这时使用new BigDecimal(String s)得到的即准确值，用于计算不会出现误差</p>
+<p><strong>BigDecimal对小数的处理：</strong></p>
+<p>BigDecimal.setScale()方法用于格式化小数点：</p>
+<p>setScale(1)表示保留一位小数，默认用四舍五入的方式</p>
+<p>setScale(1,BigDecimal.ROUND_DOWN)直接删除多余的小数位，如2.35会变成2.3</p>
+<p>setScale(1,BigDecimal.ROUND_UP)进位处理，2.35变成2.4</p>
+<p>setScale(1,BigDecimal.ROUND_HALF_UP)四舍五入，2.35变成2.4</p>
+<p>setScale(1,BigDecimal.ROUND_HALF_DOWN)四舍五入，2.35变成2.3，如果是5则向下舍</p>
+<p>scale指的是小数位后的位数，比如123.456的scale为3； </p>
+<p>==scale是BigDecimal类中的方法：==</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal b = <span class="keyword">new</span> BigDecimal(<span class="string">"123.456"</span>);</span><br><span class="line">b.scale();<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p>==roundingMode==是小数的保留模式。它们都是BigDecimal中的常量字段,有很多种，示例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> BigDecimal(Double.parseDouble(succRate) / <span class="number">24</span>).setScale(<span class="number">2</span>, BigDecimal.ROUND_HALF_UP).toString();</span><br><span class="line"><span class="keyword">new</span> BigDecimal(svcSuccData.get(<span class="string">"succRate"</span>).toString()).setScale(<span class="number">2</span>, BigDecimal.ROUND_HALF_UP).toString()</span><br></pre></td></tr></table></figure>
+<p>参考来源：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/chenssy/archive/2012/09/09/2677279.html" target="_blank" rel="noopener">使用BigDecimal进行精确运算</a></li>
+<li><a href="http://blog.csdn.net/lmb55/article/details/50253429" target="_blank" rel="noopener">BigDecimal.setScale 处理java小数点</a></li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-06T14:59:25.982Z" itemprop="dateUpdated">2018-03-06 22:59:25</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/03/06/使用BigDecimal进行精确运算/" target="_blank" rel="external">https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://beausoft.github.io">
+            <img src="/img/avatar.jpg" alt="呵呵">
+            呵呵
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/&title=《使用BigDecimal进行精确运算》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/&title=《使用BigDecimal进行精确运算》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用BigDecimal进行精确运算》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/06/Java位运算/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java位运算</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/06/Math各个函数/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Math各个函数</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>呵呵 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/&title=《使用BigDecimal进行精确运算》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/&title=《使用BigDecimal进行精确运算》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用BigDecimal进行精确运算》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/使用BigDecimal进行精确运算/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aS3LcMAwFwNz/0s4BHKneA8jJLForlz4Um1NFwQD+/ImPn9fj952/n3q6unnXsQMPDw/vwtTfz7/znt6Yj5DM53EJ8PDw8K7x8km8b9BP082fesfkc8bDw8P7Ht771pyMnF+dheN4eHh438nLN/dkaZIlw8PDw/s2Xjt0cnWW1MhD6sO5Fjw8PLwLVaTv+ftKfQ8PDw9vXVVvN/fZ+EkKeDhbPDw8vAu8NtGQBLt5KjYvmOXhMh4eHt5nePmG3k59UzBrGwiK4BsPDw9vwcvLSO3Qm8aptn0hehgPDw/vKC8PiNuwOP8kXMm74uHh4V0r6bRhcUtq75kt8fDbgoeHh1fy2vJSHnYnsCSsn7Ve4eHh4d3jJemD9juTp3036eD8PB4eHt493iYdECUFDmVZ858HDw8P7wZvkyqdXW0/Bsn5x5Hx8PDwLvA2gXW7KG2qN29HiBYFDw8P7yivfUHOy8cftlUlwTceHh7eBV47iTbYzac4K49FSRA8PDy8Q7x6DeICf5t4bZO50f14eHh413httWhTPJtt97OreHh4eDd4s9TALF3bjlC0VeHh4eF9nDcLfPfb/awYdgCGh4eHd4g3DFhHmeNZ2SxJ+x74rfDw8PBKXj7dtiGgTUxs0hP/GBMPDw/vKC8PbfNwdn9ms6B1LwMeHh7eIV4b8iZp3M8sLh4eHt5neHk5KplEkiDYpySG9T08PDy8Be+nPGbZ0XaB2raDx4XAw8PDu8DLjxzcph6SZcpD9ro/Ag8PD2/ESz4GbbmrXaacVwf0eHh4eNd4eWPTpkyVtw60aYj6Mh4eHt5/4m0KV5taVf7BwMPDw/tmXp7OaFsQEkzUGYGHh4d3lJcEvklg3TYTFFv8KEmBh4eHd4N34B/+4Km2tSsveh048PDw8NL5/AVhmmnOasactgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

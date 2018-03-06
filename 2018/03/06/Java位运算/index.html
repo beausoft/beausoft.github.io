@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java位运算 | Beausoft Bolg | 嘿嘿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="二进制与十进制间的转换方法因为位运算是对二进制数进行操作，所以先来熟悉一下十进制与二进制之间的转换方法。 正整数的十进制转换二进制要点：==除二取余，倒序排列== 解释：将一个十进制数除以二，得到的商再除以二，依此类推直到商等于一或零时为止，倒取将除得的余数，即换算为二进制数的结果 例如把52换算成二进制数，计算结果如图：">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java位运算">
+<meta property="og:url" content="https://beausoft.github.io/2018/03/06/Java位运算/index.html">
+<meta property="og:site_name" content="Beausoft Bolg">
+<meta property="og:description" content="二进制与十进制间的转换方法因为位运算是对二进制数进行操作，所以先来熟悉一下十进制与二进制之间的转换方法。 正整数的十进制转换二进制要点：==除二取余，倒序排列== 解释：将一个十进制数除以二，得到的商再除以二，依此类推直到商等于一或零时为止，倒取将除得的余数，即换算为二进制数的结果 例如把52换算成二进制数，计算结果如图：">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/379E8D9D64234719B96FEE4A718A2F66/3079">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/4CA808DFE284452CB35192E4E2670169/3081">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/0549DB08D23840CD8FE15B66B0712306/3083">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/C11DAF8FB90E413A976D047A5A07360B/3085">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/6047F004EA3B43AFAB39683BA72E13A4/3163">
+<meta property="og:updated_time" content="2018-03-06T15:00:35.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java位运算">
+<meta name="twitter:description" content="二进制与十进制间的转换方法因为位运算是对二进制数进行操作，所以先来熟悉一下十进制与二进制之间的转换方法。 正整数的十进制转换二进制要点：==除二取余，倒序排列== 解释：将一个十进制数除以二，得到的商再除以二，依此类推直到商等于一或零时为止，倒取将除得的余数，即换算为二进制数的结果 例如把52换算成二进制数，计算结果如图：">
+<meta name="twitter:image" content="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/379E8D9D64234719B96FEE4A718A2F66/3079">
+    
+        <link rel="alternate" type="application/atom+xml" title="Beausoft Bolg" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">呵呵</h5>
+          <a href="mailto:546168949@163.com" title="546168949@163.com" class="mail">546168949@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/beausoft" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java位运算</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java位运算</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-06T15:00:14.000Z" itemprop="datePublished" class="page-time">
+  2018-03-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二进制与十进制间的转换方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">二进制与十进制间的转换方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正整数的十进制转换二进制"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">正整数的十进制转换二进制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#负整数转换为二进制"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">负整数转换为二进制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小数转换为二进制"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">小数转换为二进制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二进制转换为十进制"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">二进制转换为十进制</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#位运算"><span class="post-toc-number">2.</span> <span class="post-toc-text">位运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移位运算符"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">移位运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码演示"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">代码演示</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#与运算符"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">与运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#或运算符"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">或运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异或运算符"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">异或运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非运算符"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">非运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java位运算相关技巧"><span class="post-toc-number">3.</span> <span class="post-toc-text">Java位运算相关技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#交换a-b的值，不使用第三个变量？"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">交换a,b的值，不使用第三个变量？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#法一：【法一需要考虑a-b会不会超过a表达的数值范围，导致内存溢出】"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">法一：【法一需要考虑a+b会不会超过a表达的数值范围，导致内存溢出】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#法二："><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">法二：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现一个函数，输入一个整数，输出为该整数的二进制表示有多少个1？"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">实现一个函数，输入一个整数，输出为该整数的二进制表示有多少个1？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路1：：判断该整数是否能被2整除，如果不能被2整除，则最后一位肯定为1，计数器加一，然后右移一位；"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">思路1：：判断该整数是否能被2整除，如果不能被2整除，则最后一位肯定为1，计数器加一，然后右移一位；</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路2：思路1中右移n可能会导致是负数的时候造成死循环。那么我们改进，每次左移1"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">思路2：思路1中右移n可能会导致是负数的时候造成死循环。那么我们改进，每次左移1.</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路3：-n-1-amp-n相当于把n的最右边一个1变为0；"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">思路3： (n-1)&amp;n相当于把n的最右边一个1变为0；</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现一个函数不用加减乘除求两个数的和"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">实现一个函数不用加减乘除求两个数的和</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断一个数是不是2的整数次方？"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">判断一个数是不是2的整数次方？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#两个整数m-n-改变多少位二进制表示才能从m变为n"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">两个整数m,n,改变多少位二进制表示才能从m变为n.</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个整形数组里面除了两个数字，其他数字都出现了两次，找出只出现了一次的两个数字。时间复杂O-n-空间O-1"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">一个整形数组里面除了两个数字，其他数字都出现了两次，找出只出现了一次的两个数字。时间复杂O(n),空间O(1)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java位运算"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java位运算</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-06 23:00:14" datetime="2018-03-06T15:00:14.000Z"  itemprop="datePublished">2018-03-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="二进制与十进制间的转换方法"><a href="#二进制与十进制间的转换方法" class="headerlink" title="二进制与十进制间的转换方法"></a>二进制与十进制间的转换方法</h1><p>因为位运算是对二进制数进行操作，所以先来熟悉一下十进制与二进制之间的转换方法。</p>
+<h2 id="正整数的十进制转换二进制"><a href="#正整数的十进制转换二进制" class="headerlink" title="正整数的十进制转换二进制"></a>正整数的十进制转换二进制</h2><p>要点：==除二取余，倒序排列==</p>
+<p><strong>解释：将一个十进制数除以二，得到的商再除以二，依此类推直到商等于一或零时为止，倒取将除得的余数，即换算为二进制数的结果</strong></p>
+<p>例如把52换算成二进制数，计算结果如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/379E8D9D64234719B96FEE4A718A2F66/3079" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<p>52除以2得到的余数依次为：0、0、1、0、1、1，倒序排列，所以52对应的二进制数就是110100。<br>由于计算机内部表示数的字节单位都是定长的，以2的幂次展开，或者8位，或者16位，或者32位….。<br>于是，一个二进制数用计算机表示时，位数不足2的幂次时，高位上要补足若干个0。本文都以8位为例。那么：<br>(52)10=(00110100)2</p>
+<h2 id="负整数转换为二进制"><a href="#负整数转换为二进制" class="headerlink" title="负整数转换为二进制"></a>负整数转换为二进制</h2><p>要点：==（正数除二取余，倒序排列）取反加一==</p>
+<p><strong>解释：将该负整数对应的正整数先转换成二进制，然后对其“取补”，再对取补后的结果加1即可</strong></p>
+<p>例如要把-52换算成二进制：</p>
+<ol>
+<li>先取得52的二进制：00110100</li>
+<li>对所得到的二进制数取反：11001011</li>
+<li>将取反后的数值加一即可：11001100<br>即：(-52)10=(11001100)2</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/4CA808DFE284452CB35192E4E2670169/3081" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="小数转换为二进制"><a href="#小数转换为二进制" class="headerlink" title="小数转换为二进制"></a>小数转换为二进制</h2><p>要点：==（小数）乘二取整，正序排列==</p>
+<p><strong>解释：对被转换的小数乘以2，取其整数部分(0或1)作为二进制小数部分，取其小数部分，再乘以2，又取其整数部分作为二进制小数部分，然后取小数部分，再乘以2，直到小数部分为0或者已经去到了足够位数。每次取的整数部分，按先后次序排列，就构成了二进制小数的序列</strong></p>
+<p>例如把0.2转换为二进制，转换过程如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/0549DB08D23840CD8FE15B66B0712306/3083" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<p>0.2乘以2，取整后小数部分再乘以2，运算4次后得到的整数部分依次为0、0、1、1，结果又变成了0.2，<br>若果0.2再乘以2后会循环刚开始的4次运算，所以0.2转换二进制后将是0011的循环，即：<br>(0.2)10=(0.0011 0011 0011 …..)2<br>循环的书写方法为在循环序列的第一位和最后一位分别加一个点标注</p>
+<h2 id="二进制转换为十进制"><a href="#二进制转换为十进制" class="headerlink" title="二进制转换为十进制"></a>二进制转换为十进制</h2><p><strong>整数二进制用数值乘以2的幂次依次相加，小数二进制用数值乘以2的负幂次然后依次相加！</strong></p>
+<p><strong>比如将二进制110转换为十进制：</strong></p>
+<p><strong>首先补齐位数，00000110，首位为0，则为正整数，那么将二进制中的三位数分别于下边对应的值相乘后相加得到的值为换算为十进制的结果</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/C11DAF8FB90E413A976D047A5A07360B/3085" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<p><strong>如果二进制数补足位数之后首位为1，那么其对应的整数为负，那么需要先取反然后再换算</strong></p>
+<p>比如11111001，首位为1，那么需要先对其取反，即：-00000110</p>
+<p>00000110,对应的十进制为6，因此11111001对应的十进制即为-6</p>
+<p>换算公式可表示为:</p>
+<p>11111001=-00000110</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=-6</p>
+<p><strong>如果将二进制0.110转换为十进制：</strong></p>
+<p><strong>将二进制中的三位数分别于下边对应的值相乘后相加得到的值为换算为十进制的结果</strong></p>
+<h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><p>Java提供的位运算符有：左移( &lt;&lt; )、右移( &gt;&gt; ) 、无符号右移( &gt;&gt;&gt; ) 、位与( &amp; ) 、位或( | )、位非( ~ )、位异或( ^ )，除了位非( ~ )是一元操作符外，其它的都是二元操作符。</p>
+<h2 id="移位运算符"><a href="#移位运算符" class="headerlink" title="移位运算符"></a>移位运算符</h2><p>移位运算符操作的对象就是二进制的位，可以单独用移位运算符来处理int型整数。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>例子 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移运算符，将运算符左边的对象向左移动运算符右边指定的位数（在低位补0）</td>
+<td>x&lt;&lt;3</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>“有符号”右移运算 符，将运算符左边的对象向右移动运算符右边指定的位数。使用符号扩展机制，也就是说，如果值为正，则在高位补0，如果值为负，则在高位补1.</td>
+<td>x &gt;&gt;3</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>“无符号”右移运算 符，将运算符左边的对象向右移动运算符右边指定的位数。采用0扩展机制，也就是说，无论值的正负，都在高位补0.</td>
+<td>x&gt;&gt;&gt;3</td>
+</tr>
+</tbody>
+</table>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://note.youdao.com/yws/public/resource/3e0c5ba2ed083dcfc8db464ec38abe81/xmlnote/6047F004EA3B43AFAB39683BA72E13A4/3163" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<p>以int类型的6297为例，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Integer.toBinaryString(<span class="number">6297</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(-<span class="number">6297</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(<span class="number">6297</span>&gt;&gt;<span class="number">5</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(-<span class="number">6297</span>&gt;&gt;<span class="number">5</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(<span class="number">6297</span>&gt;&gt;&gt;<span class="number">5</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(-<span class="number">6297</span>&gt;&gt;&gt;<span class="number">5</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(<span class="number">6297</span>&lt;&lt;<span class="number">5</span>));   </span><br><span class="line">System.out.println(Integer.toBinaryString(-<span class="number">6297</span>&lt;&lt;<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code>11111111111111111110011101100111
+11000100
+11111111111111111111111100111011
+11000100
+111111111111111111100111011
+110001001100100000
+11111111111111001110110011100000
+</code></pre><blockquote>
+<p>注：x&lt;&lt;y 相当于 x*2y ；x&gt;&gt;y相当于x/2y<br>    从计算速度上讲，移位运算要比算术运算快。<br>    如果x是负数，那么x&gt;&gt;&gt;3没有什么算术意义，只有逻辑意义。</p>
+</blockquote>
+<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><ol>
+<li>左移</li>
+</ol>
+<p>est1、将5左移2位：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.xcy;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="number">5</span>&lt;&lt;<span class="number">2</span>);<span class="comment">//运行结果是20  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果是20，但是程序是怎样执行的呢？</p>
+<p>首先会将5转为2进制表示形式(java中，整数默认就是int类型,也就是32位):</p>
+<p>0000 0000 0000 0000 0000 0000 0000 0101           然后左移2位后，低位补0：</p>
+<p>0000 0000 0000 0000 0000 0000 0001 01==00==           换算成10进制为20</p>
+<ol>
+<li>右移( &gt;&gt; ) ，右移同理，只是方向不一样罢了(感觉和没说一样)</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="number">5</span>&gt;&gt;<span class="number">2</span>);<span class="comment">//运行结果是1</span></span><br></pre></td></tr></table></figure>
+<p>还是先将5转为2进制表示形式：</p>
+<p>0000 0000 0000 0000 0000 0000 0000 0101 然后右移2位，高位补0：</p>
+<p>==00==00 0000 0000 0000 0000 0000 0000 0001</p>
+<ol>
+<li>无符号右移( &gt;&gt;&gt; )</li>
+</ol>
+<p>我们知道在Java中int类型占32位，可以表示一个正数，也可以表示一个负数。正数换算成二进制后的最高位为0，负数的二进制最高为为1</p>
+<p>例如  -5换算成二进制后为：</p>
+<p>1111 1111 1111 1111 1111 1111 1111 1011   (刚开始接触二进制时，不知道最高位是用来表示正负之分的，当时就总想不通。。明明算起来得到的就是一个正数-_-)</p>
+<p>我们分别对5进行右移3位、 -5进行右移3位和无符号右移3位：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package com.xcy;  </span><br><span class="line">  </span><br><span class="line">public class Test &#123;  </span><br><span class="line">    public static void main(String[] args) &#123;  </span><br><span class="line">        System.out.println(5&gt;&gt;3);//结果是0  </span><br><span class="line">        System.out.println(-5&gt;&gt;3);//结果是-1  </span><br><span class="line">        System.out.println(-5&gt;&gt;&gt;3);//结果是536870911  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们来看看它的移位过程(可以通过其结果换算成二进制进行对比)：</p>
+<p>5换算成二进制： 0000 0000 0000 0000 0000 0000 0000 0101</p>
+<p>5右移3位后结果为0，0的二进制为： ==000==0 0000 0000 0000 0000 0000 0000 0000 // (==用0进行补位==)</p>
+<p> -5换算成二进制： 1111 1111 1111 1111 1111 1111 1111 1011</p>
+<p> -5右移3位后结果为-1，-1的二进制为：<br>==111==1 1111 1111 1111 1111 1111 1111 1111   // (==用1进行补位==)</p>
+<p> -5无符号右移3位后的结果 536870911 换算成二进制： </p>
+<p>==000==1 1111 1111 1111 1111 1111 1111 1111   // (==用0进行补位==)</p>
+<p>通过其结果转换成二进制后，我们可以发现，==正数右移，高位用0补，负数右移，高位用1补，当负数使用无符号右移时，用0进行部位(自然而然的，就由负数变成了正数了)==</p>
+<blockquote>
+<p>注意：笔者在这里说的是右移，高位补位的情况。正数或者负数左移，低位都是用0补。(自行测试)</p>
+</blockquote>
+<p>小技巧：</p>
+<ol>
+<li>&lt;&lt;&nbsp;：&nbsp;左移运算符，num &lt;&lt; 1,相当于num乘以2</li>
+<li>&gt;&gt;&nbsp;：&nbsp;右移运算符，num &gt;&gt; 1,相当于num除以2</li>
+<li>&gt;&gt;&gt;&nbsp;：&nbsp;无符号右移，忽略符号位，空位都以0补齐</li>
+</ol>
+<h2 id="与运算符"><a href="#与运算符" class="headerlink" title="与运算符"></a>与运算符</h2><p>与运算符用符号“&amp;”表示，其使用规律如下：</p>
+<p>两个操作数中位都为1，结果才为1，否则结果为0，例如下面的程序段。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">data13</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">129</span>;</span><br><span class="line">        <span class="keyword">int</span> b=<span class="number">128</span>;</span><br><span class="line">        System.out.println(<span class="string">"a 和b 与的结果是："</span>+(a&amp;b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<pre><code>a 和b 与的结果是：128
+下面分析这个程序：
+“a”的值是129，转换成二进制就是10000001，而“b”的值是128，转换成二进制就是10000000。根据与运算符的运算规律，只有两个位都是1，结果才是1，可以知道结果就是10000000，即128。
+</code></pre><h2 id="或运算符"><a href="#或运算符" class="headerlink" title="或运算符"></a>或运算符</h2><p>或运算符用符号“|”表示，其运算规律如下：</p>
+<p>两个位只要有一个为1，那么结果就是1，否则就为0，下面看一个简单的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class data14</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        int a=129;</span><br><span class="line">        int b=128;</span><br><span class="line">        System.out.println(&quot;a 和b 或的结果是：&quot;+(a|b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<pre><code>a 和b 或的结果是：129
+下面分析这个程序段：
+a 的值是129，转换成二进制就是10000001，而b 的值是128，转换成二进制就是10000000，根据或运算符的运算规律，只有两个位有一个是1，结果才是1，可以知道结果就是10000001，即129。
+</code></pre><h2 id="异或运算符"><a href="#异或运算符" class="headerlink" title="异或运算符"></a>异或运算符</h2><p>异或运算符是用符号“^”表示的，其运算规律是：</p>
+<p>两个操作数的位中，相同则结果为0，不同则结果为1。下面看一个简单的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class data16</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        int a=15;</span><br><span class="line">        int b=2;</span><br><span class="line">        System.out.println(&quot;a 与 b 异或的结果是：&quot;+(a^b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<pre><code>a 与 b 异或的结果是：13
+分析上面的程序段：a 的值是15，转换成二进制为1111，而b 的值是2，转换成二进制为0010，根据异或的运算规律，可以得出其结果为1101 即13。
+</code></pre><h2 id="非运算符"><a href="#非运算符" class="headerlink" title="非运算符"></a>非运算符</h2><p>非运算符用符号“~”表示，其运算规律如下：</p>
+<p>如果位为0，结果是1，如果位为1，结果是0，下面看一个简单例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class data15</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        int a=2;</span><br><span class="line">        System.out.println(&quot;a 非的结果是：&quot;+(~a));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Java位运算相关技巧"><a href="#Java位运算相关技巧" class="headerlink" title="Java位运算相关技巧"></a>Java位运算相关技巧</h1><p>计算机所有的运算最终都是转换为位运算和移位的操作，效率也很高，在很多场合具有很强的技巧，所以做个总结供大家学习。</p>
+<h2 id="交换a-b的值，不使用第三个变量？"><a href="#交换a-b的值，不使用第三个变量？" class="headerlink" title="交换a,b的值，不使用第三个变量？"></a>交换a,b的值，不使用第三个变量？</h2><p>通常使用第三个变量：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">3</span>,b=<span class="number">4</span>;  </span><br><span class="line"><span class="keyword">int</span> temp;  </span><br><span class="line">  </span><br><span class="line">temp=a；  </span><br><span class="line">a=b;  </span><br><span class="line">b=temp;</span><br></pre></td></tr></table></figure>
+<h3 id="法一：【法一需要考虑a-b会不会超过a表达的数值范围，导致内存溢出】"><a href="#法一：【法一需要考虑a-b会不会超过a表达的数值范围，导致内存溢出】" class="headerlink" title="法一：【法一需要考虑a+b会不会超过a表达的数值范围，导致内存溢出】"></a>法一：【法一需要考虑a+b会不会超过a表达的数值范围，导致内存溢出】</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=a+b;  </span><br><span class="line">b=a-b;         <span class="comment">// 右边等价于a+b-b=====a  </span></span><br><span class="line">a=a-b;           <span class="comment">//此时b等于a,右边等价于a+b-a====b</span></span><br></pre></td></tr></table></figure>
+<h3 id="法二："><a href="#法二：" class="headerlink" title="法二："></a>法二：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=a^b;  </span><br><span class="line">b=a^b; // 右边等价于a^b^b=====a  </span><br><span class="line">a=a^b; //此时b===a; 此式右边等于a^b^a=====b</span><br></pre></td></tr></table></figure>
+<h2 id="实现一个函数，输入一个整数，输出为该整数的二进制表示有多少个1？"><a href="#实现一个函数，输入一个整数，输出为该整数的二进制表示有多少个1？" class="headerlink" title="实现一个函数，输入一个整数，输出为该整数的二进制表示有多少个1？"></a>实现一个函数，输入一个整数，输出为该整数的二进制表示有多少个1？</h2><h3 id="思路1：：判断该整数是否能被2整除，如果不能被2整除，则最后一位肯定为1，计数器加一，然后右移一位；"><a href="#思路1：：判断该整数是否能被2整除，如果不能被2整除，则最后一位肯定为1，计数器加一，然后右移一位；" class="headerlink" title="思路1：：判断该整数是否能被2整除，如果不能被2整除，则最后一位肯定为1，计数器加一，然后右移一位；"></a>思路1：：判断该整数是否能被2整除，如果不能被2整除，则最后一位肯定为1，计数器加一，然后右移一位；</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Numberof1</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;  </span><br><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;  </span><br><span class="line"><span class="keyword">while</span>(n)&#123;  </span><br><span class="line"><span class="keyword">if</span>(n&amp;<span class="number">1</span>) <span class="comment">// if(n%2==1)  </span></span><br><span class="line">count++;  </span><br><span class="line">  </span><br><span class="line">n=n&gt;&gt;<span class="number">1</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">return</span> count；  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>存在问题：如果把移位改为除以2，那样效率又太低，如果输入时一个负数，0x8000 0000右边移动一位，变为0xC000 0000 。而不等价于理想的右移动一位的时候相当于除以2，得0x4000 0000。这样最终就会都变为1，引起死循环；</p>
+<h3 id="思路2：思路1中右移n可能会导致是负数的时候造成死循环。那么我们改进，每次左移1"><a href="#思路2：思路1中右移n可能会导致是负数的时候造成死循环。那么我们改进，每次左移1" class="headerlink" title="思路2：思路1中右移n可能会导致是负数的时候造成死循环。那么我们改进，每次左移1."></a>思路2：思路1中右移n可能会导致是负数的时候造成死循环。那么我们改进，每次左移1.</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Numberof1</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;  </span><br><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;  </span><br><span class="line">unsigned <span class="keyword">int</span> flag=<span class="number">1</span>;  </span><br><span class="line"><span class="keyword">while</span>(flag)&#123;  </span><br><span class="line"><span class="keyword">if</span>(n&amp;flag) <span class="comment">// 判断某位是否为1  </span></span><br><span class="line">count++;  </span><br><span class="line">  </span><br><span class="line">flag=flag&lt;&lt;<span class="number">1</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">return</span> count；  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路3：-n-1-amp-n相当于把n的最右边一个1变为0；"><a href="#思路3：-n-1-amp-n相当于把n的最右边一个1变为0；" class="headerlink" title="思路3： (n-1)&amp;n相当于把n的最右边一个1变为0；"></a>思路3： (n-1)&amp;n相当于把n的最右边一个1变为0；</h3><p>n-1:相当于把最右边的1变为0，左边保持不变，该1右边的0变为1；10100—减1—&gt;10011</p>
+<p>(n-1)&amp;n：10100—&amp;—10011————&gt; 10 000</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Numberof1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;  </span><br><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;  </span><br><span class="line"><span class="keyword">while</span>(n)&#123;  </span><br><span class="line">count++;  </span><br><span class="line">n=(n-<span class="number">1</span>) &amp;&amp; n;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">return</span> count；  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="实现一个函数不用加减乘除求两个数的和"><a href="#实现一个函数不用加减乘除求两个数的和" class="headerlink" title="实现一个函数不用加减乘除求两个数的和"></a>实现一个函数不用加减乘除求两个数的和</h2><p>思路：num1^num2:相当于只做加法不做进位（不同为1，相同为0，此时都为1的二进制位没有进位）；</p>
+<p>num1&amp;num2&lt;&lt;1:相当于进位（都为1，才为1.左移1位）</p>
+<p>把上面两步相加，反复迭代即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123;  </span><br><span class="line"><span class="keyword">int</span> sum,carray;  </span><br><span class="line"><span class="keyword">do</span>&#123;  </span><br><span class="line">sum=num1^num2;  </span><br><span class="line">carray=num1&amp;num2&lt;&lt;<span class="number">1</span>;  </span><br><span class="line">num1=sum;  </span><br><span class="line">num2=carray;  </span><br><span class="line">&#125;<span class="keyword">while</span>(num2!=<span class="number">0</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判断一个数是不是2的整数次方？"><a href="#判断一个数是不是2的整数次方？" class="headerlink" title="判断一个数是不是2的整数次方？"></a>判断一个数是不是2的整数次方？</h2><p>思路：如果一个数是2的整数次方，那么这个数的二进制表示中有且仅有一位为1. (n-1)&amp;n那么这个数唯一的一个1就会变为0；(n-1)&amp;n==0 就是2的整数次方。</p>
+<h2 id="两个整数m-n-改变多少位二进制表示才能从m变为n"><a href="#两个整数m-n-改变多少位二进制表示才能从m变为n" class="headerlink" title="两个整数m,n,改变多少位二进制表示才能从m变为n."></a>两个整数m,n,改变多少位二进制表示才能从m变为n.</h2><p>思路：求异或，然后求异或中有多少个1.</p>
+<h2 id="一个整形数组里面除了两个数字，其他数字都出现了两次，找出只出现了一次的两个数字。时间复杂O-n-空间O-1"><a href="#一个整形数组里面除了两个数字，其他数字都出现了两次，找出只出现了一次的两个数字。时间复杂O-n-空间O-1" class="headerlink" title="一个整形数组里面除了两个数字，其他数字都出现了两次，找出只出现了一次的两个数字。时间复杂O(n),空间O(1)"></a>一个整形数组里面除了两个数字，其他数字都出现了两次，找出只出现了一次的两个数字。时间复杂O(n),空间O(1)</h2><p>思路：如果只有一个数字是只出现了一次，其他数字都出现了两次，那么只需要异或数组中的的所有元素，最后得到的值就是那个只出现一次的数字，出现偶数次的数字都被异或得0了。a^a==0。现在是两个只出现了一次的数字，那么想办法分组，每个组里面包含一个只出现一次的数字，要保证其他一样的数字出现在同一个组里。</p>
+<p>首先异或数组里面所有的数字得到一个结果值。由于有两个数字只出现了一次，其他数字异或抵消掉了，这两个不同的数字异或结果不等于0，结果的二进制表示中肯定至少有一位为1.我们找该结果的第一个为1的位置。这两个只出现一次的数字，肯定该对应位一个为1，一个为0.我们依据每个元素该位置是否为1分为两组，这2个不同的只出现一次的数字就被分到两个组里，数字出现两次的数字由于一样肯定会被分到同一个组里。最后，分别异或两个组，得到两个数字就是唯一出现一次的两个不同的数字。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findNumAppearOne</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;  </span><br><span class="line"><span class="keyword">if</span>(a==<span class="keyword">null</span> || a.length&lt;<span class="number">2</span>)  </span><br><span class="line"><span class="keyword">return</span> ;  </span><br><span class="line"><span class="keyword">int</span> sum=<span class="number">0</span>;  </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i:a) sum^=i;  </span><br><span class="line"><span class="keyword">int</span> index=findFirstBitIs1(sum); <span class="comment">//发现第一个为1的位置；  </span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">int</span> sum1=<span class="number">0</span>;  </span><br><span class="line"><span class="keyword">int</span> sum2=<span class="number">0</span>;  </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i:a)&#123;  </span><br><span class="line"><span class="keyword">if</span>(isBit1(i,index)) <span class="comment">//判断i的index位置是不是1；  </span></span><br><span class="line">sum1^=i;  </span><br><span class="line"><span class="keyword">else</span>  </span><br><span class="line">sum2^=i;  </span><br><span class="line">&#125;  </span><br><span class="line">System.out.println(sum1);  </span><br><span class="line">System.out.println(sum2);  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findFirstBitIs1</span><span class="params">(<span class="keyword">int</span> sum)</span></span>&#123;<span class="comment">//判断从右往左的第n位置是不是1，是1返回。  </span></span><br><span class="line"><span class="keyword">int</span> index=<span class="number">0</span>;  </span><br><span class="line"><span class="keyword">while</span>((sum&amp;<span class="number">1</span>)==<span class="number">0</span>)&#123;  </span><br><span class="line">sum=sum&gt;&gt;<span class="number">1</span>;  </span><br><span class="line">index++;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">return</span> index;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> booleam <span class="title">isBit1</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> index)</span></span>&#123;  </span><br><span class="line">i=i&gt;&gt;index;  </span><br><span class="line"><span class="keyword">return</span> (i&amp;<span class="number">1</span>)==<span class="number">0</span> ;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考来源：</p>
+<ol>
+<li><a href="http://www.cnblogs.com/qqzy168/p/3626090.html" target="_blank" rel="noopener">二进制与十进制间的转换方法(图文教程)</a></li>
+<li><a href="http://blog.csdn.net/xiaochunyong/article/details/7748713" target="_blank" rel="noopener">Java 位运算(移位、位与、或、异或、非）</a></li>
+<li><a href="http://blog.csdn.net/a784586/article/details/61419598" target="_blank" rel="noopener">与位运算相关的编程算法技巧的总结java实现</a></li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-06T15:00:35.654Z" itemprop="dateUpdated">2018-03-06 23:00:35</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/03/06/Java位运算/" target="_blank" rel="external">https://beausoft.github.io/2018/03/06/Java位运算/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://beausoft.github.io">
+            <img src="/img/avatar.jpg" alt="呵呵">
+            呵呵
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/Java位运算/&title=《Java位运算》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/Java位运算/&title=《Java位运算》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/Java位运算/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java位运算》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/Java位运算/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/Java位运算/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/06/Java-List去掉重复对象/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java List去掉重复对象</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/06/使用BigDecimal进行精确运算/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用BigDecimal进行精确运算</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>呵呵 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/Java位运算/&title=《Java位运算》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/Java位运算/&title=《Java位运算》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/Java位运算/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java位运算》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/Java位运算/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/Java位运算/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3awY6DMAxFUf7/p5ltuyDcZ9ORiG9WFaIhJwvLjnMceJwXg7z/+YS8s565NWTIkPFaxrkchHH14fUM6zXwtcmQIWMOgyyCfzj9F//u5XMZMmTIwIkdTxMJXoYMGTL6jNpyeaIpQ4YMGbWpOYMnkR22DBkyJjD4qfv///5Jf0OGDBmvYpzhIAE3PVyrreRrThkyZGzN4AGuw1u3M0lySY7wZMiQMYexXlbaeiTvc14xe5UhQ8bLGZ2Qxw/Uaq0CUuh+ZbgyZMjYmkGKzzQp5M2GtCEhQ4aMmYy03dhJ9fjWkFArQ4aMCYzaJQneGFhjeFGNElYZMmQMYNQ+0Gkb8AYAmkGGDBmbMnj5miaO6dak7DjDlSFDxmsZnWteT7U5OR6liTJkyNiUQUJe+gFSdta26ehEbhkyZLyckR6ckZDKt6PTIpUhQ8beDN6Y5K1KguRBPLiVJkOGjE0Z6Wf41GlZmwZ9GTJkTGPwZkBK5WUqX3pw3CZDhowxjPSaRT8NrbUWZMiQMYfxVEuAJ5TpMdzNqaEMGTLGMGoFJ1lQejzXCrgyZMjYgnGGoxZqawGXb4oMGTL2ZjzbE4zLTvCEhGwZMmRMYJAgy6fjpWyaaN78V4YMGQMYtaP8tEAl28RDf7H/KUOGjAGMTojshNQbqgwZMmTg5I8f+vPnQQtThgwZWzM61ybIkRkJrGSzZMiQMZORXnFIS9n0gkWtVSBDhoxNGX9Umah2OOAuiQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

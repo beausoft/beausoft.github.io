@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java List去掉重复对象 | Beausoft Bolg | 嘿嘿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="一、 去除List中重复的String123456789public List&amp;lt;String&amp;gt; removeStringListDupli(List&amp;lt;String&amp;gt; stringList) &amp;#123;    Set&amp;lt;String&amp;gt; set = new LinkedHashSet&amp;lt;&amp;gt;();    set.addAll(stringList);">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java List去掉重复对象">
+<meta property="og:url" content="https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/index.html">
+<meta property="og:site_name" content="Beausoft Bolg">
+<meta property="og:description" content="一、 去除List中重复的String123456789public List&amp;lt;String&amp;gt; removeStringListDupli(List&amp;lt;String&amp;gt; stringList) &amp;#123;    Set&amp;lt;String&amp;gt; set = new LinkedHashSet&amp;lt;&amp;gt;();    set.addAll(stringList);">
+<meta property="og:updated_time" content="2018-03-06T15:01:26.471Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java List去掉重复对象">
+<meta name="twitter:description" content="一、 去除List中重复的String123456789public List&amp;lt;String&amp;gt; removeStringListDupli(List&amp;lt;String&amp;gt; stringList) &amp;#123;    Set&amp;lt;String&amp;gt; set = new LinkedHashSet&amp;lt;&amp;gt;();    set.addAll(stringList);">
+    
+        <link rel="alternate" type="application/atom+xml" title="Beausoft Bolg" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">呵呵</h5>
+          <a href="mailto:546168949@163.com" title="546168949@163.com" class="mail">546168949@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/beausoft" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java List去掉重复对象</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java List去掉重复对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-06T15:01:08.000Z" itemprop="datePublished" class="page-time">
+  2018-03-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、-去除List中重复的String"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、 去除List中重复的String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、-List中对象去重"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、 List中对象去重</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、根据对象的属性去重"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、根据对象的属性去重</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java-List去掉重复对象"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java List去掉重复对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-06 23:01:08" datetime="2018-03-06T15:01:08.000Z"  itemprop="datePublished">2018-03-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="一、-去除List中重复的String"><a href="#一、-去除List中重复的String" class="headerlink" title="一、 去除List中重复的String"></a>一、 去除List中重复的String</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">removeStringListDupli</span><span class="params">(List&lt;String&gt; stringList)</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; set = <span class="keyword">new</span> LinkedHashSet&lt;&gt;();</span><br><span class="line">    set.addAll(stringList);</span><br><span class="line"></span><br><span class="line">    stringList.clear();</span><br><span class="line"></span><br><span class="line">    stringList.addAll(set);</span><br><span class="line">    <span class="keyword">return</span> stringList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或使用Java8的写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; unique = list.stream().distinct().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<h3 id="二、-List中对象去重"><a href="#二、-List中对象去重" class="headerlink" title="二、 List中对象去重"></a>二、 List中对象去重</h3><p>比如现在有一个 Person类:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(Long id, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + id +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重写Person对象的equals()方法和hashCode()方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (o == <span class="keyword">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    </span><br><span class="line">    Person person = (Person) o;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!id.equals(person.id)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> name.equals(person.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = id.hashCode();</span><br><span class="line">    result = <span class="number">31</span> * result + name.hashCode();</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面对象去重的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Person p1 = <span class="keyword">new</span> Person(<span class="number">1l</span>, <span class="string">"jack"</span>);</span><br><span class="line">Person p2 = <span class="keyword">new</span> Person(<span class="number">3l</span>, <span class="string">"jack chou"</span>);</span><br><span class="line">Person p3 = <span class="keyword">new</span> Person(<span class="number">2l</span>, <span class="string">"tom"</span>);</span><br><span class="line">Person p4 = <span class="keyword">new</span> Person(<span class="number">4l</span>, <span class="string">"hanson"</span>);</span><br><span class="line">Person p5 = <span class="keyword">new</span> Person(<span class="number">5l</span>, <span class="string">"胶布虫"</span>);</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; persons = Arrays.asList(p1, p2, p3, p4, p5, p5, p1, p2, p2);</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; personList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="comment">// 去重</span></span><br><span class="line">persons.stream().forEach(</span><br><span class="line">p -&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (!personList.contains(p)) &#123;</span><br><span class="line">        personList.add(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">);</span><br><span class="line">System.out.println(personList);</span><br></pre></td></tr></table></figure>
+<p>List 的contains()方法底层实现使用对象的equals方法去比较的，其实重写equals()就好，但重写了equals最好将hashCode也重写了。</p>
+<p>可以参见:<a href="http://stackoverflow.com/questions/30745048/how-to-remove-duplicate-objects-from-java-arraylist" target="_blank" rel="noopener">http://stackoverflow.com/questions/30745048/how-to-remove-duplicate-objects-from-java-arraylist</a><br><a href="http://blog.csdn.net/growing_tree/article/details/46622579" target="_blank" rel="noopener">http://blog.csdn.net/growing_tree/article/details/46622579</a></p>
+<h3 id="三、根据对象的属性去重"><a href="#三、根据对象的属性去重" class="headerlink" title="三、根据对象的属性去重"></a>三、根据对象的属性去重</h3><p>下面要根据Person对象的id去重，那该怎么做呢？ 写一个方法吧:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Person&gt; <span class="title">removeDupliById</span><span class="params">(List&lt;Person&gt; persons)</span> </span>&#123;</span><br><span class="line">    Set&lt;Person&gt; personSet = <span class="keyword">new</span> TreeSet&lt;&gt;((o1, o2) -&gt; o1.getId().compareTo(o2.getId()));</span><br><span class="line">        personSet.addAll(persons);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(personSet);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过Comparator比较器，比较对象属性，相同就返回0，达到过滤的目的。</p>
+<p>再来看比较炫酷的Java8写法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.util.Comparator.comparingLong;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.util.stream.Collectors.collectingAndThen;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.util.stream.Collectors.toCollection;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据id去重</span></span><br><span class="line">List&lt;Person&gt; unique = persons.stream().collect(</span><br><span class="line">    collectingAndThen(</span><br><span class="line">        toCollection(() -&gt; <span class="keyword">new</span> TreeSet&lt;&gt;(comparingLong(Person::getId))), ArrayList::<span class="keyword">new</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>使用TreeSet去做去重，排序采用comparing比较器</p>
+<p>保存原来的顺序，使用LinkedHashSet即可，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; unique = persons.stream()..collect(Collectors.collectingAndThen(</span><br><span class="line">    Collectors.toCollection(()-&gt; <span class="keyword">new</span> LinkedHashSet&lt;&gt;()), ArrayList::<span class="keyword">new</span>));</span><br></pre></td></tr></table></figure>
+<p>还有一种写法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">Predicate&lt;T&gt; <span class="title">distinctByKey</span><span class="params">(Function&lt;? <span class="keyword">super</span> T, Object&gt; keyExtractor)</span> </span>&#123;</span><br><span class="line">    Map&lt;Object, Boolean&gt; map = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">return</span> t -&gt; map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// remove duplicate</span></span><br><span class="line">persons.stream().filter(distinctByKey(p -&gt; p.getId())).forEach(p -&gt; System.out.println(p));</span><br></pre></td></tr></table></figure>
+<p>java8 确实简化了很多冗长的操作，精简了代码，小伙，研究java8去吧！</p>
+<p>参考: </p>
+<p><a href="http://www.cnblogs.com/jizha/p/java_arraylist_duplicate.html" target="_blank" rel="noopener">http://www.cnblogs.com/jizha/p/java_arraylist_duplicate.html</a></p>
+<p><a href="http://www.cnblogs.com/jizha/p/java_arraylist_duplicate.html" target="_blank" rel="noopener">http://www.cnblogs.com/jizha/p/java_arraylist_duplicate.html</a></p>
+<p>来源:<a href="http://blog.csdn.net/jiaobuchong/article/details/54412094" target="_blank" rel="noopener">http://blog.csdn.net/jiaobuchong/article/details/54412094</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-06T15:01:26.471Z" itemprop="dateUpdated">2018-03-06 23:01:26</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/03/06/Java-List去掉重复对象/" target="_blank" rel="external">https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://beausoft.github.io">
+            <img src="/img/avatar.jpg" alt="呵呵">
+            呵呵
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/&title=《Java List去掉重复对象》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/&title=《Java List去掉重复对象》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java List去掉重复对象》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/06/Java位运算/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java位运算</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>呵呵 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/&title=《Java List去掉重复对象》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/&title=《Java List去掉重复对象》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java List去掉重复对象》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/Java-List去掉重复对象/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3awXIiMQwE0Pz/T7NVe80C3ZJNUlvPJ2oCwW8OY9HS11e8Hn/X6yvfrz++rWfvf/ae5D8cWHh4eHijrT9b+SZev243/ezb8z3j4eHh3ea1j/jkqHj9oN9fSQ4wPDw8vJ/l5ZtOjoHkKMLDw8P7P3hJYJEX38mn2mIdDw8P7zO8/DG9iWs3Ae71rAUPDw8v5rUNsN/w+mJ/Dw8PD2/RVc9jgrbd1ZbRs4WHh4d3g5fErK+/ch9MtMV0cgoUKTIeHh7empeDk2ZVG0y0DbZoiAEPDw/vAi//glkjvw1wZ0Na0fGAh4eHt+blLaXkoTxrQbWA4mDAw8PD+whvttG8pM6HEmaledG1w8PDwxvxkjft22AJeDYJEP0VDw8P7yhvs5XNAEFblA/bYHh4eHjXeC3pVDBxCvYmjMDDw8M7ypv9vN8MELQFev4pPDw8vM/wZgfDLLZYRbHB7fvHPvHw8PCu8dqvKZr3h8ruNsDFw8PDu83Ly9l8u5tiuh0miLIWPDw8vEO8dhCqHZ+aHS2bTOXpZAQeHh7eIV7b8n+9Zoy83bWaJsPDw8O7xssbWvcCiH3U+/RgwMPDw1vzZo2rs1HsqcEsPDw8vM/w2kd88rBuA9w22E1KeTw8PLx7vGS4Km+ARQHB6LPtjcDDw8O7x2vDglk80TbP8hGEKGvBw8PDu8bL/10SB8yi2HaQ6w0YDw8P7wJv34Jqw4Ic0A4lbAa/8PDw8HLeo1ybW5C3u5JbEx0eeHh4eBd498ae2iOkHTJoi348PDy8s7w2kpgFFvmjPw+Ok5uIh4eHd4/XlsKzWDa/PiuO38xE4OHh4X2clzfy8ytnYw48PDy838mbhQ6zUjsfzDpQUuPh4eGVvE3cMCua26iijS3w8PDw7vHaH/l5SNE+7mfI4bgAHh4e3oT3BwPQu2CKQKdLAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
