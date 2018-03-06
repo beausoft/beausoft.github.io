@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java中树和树的几种常规遍历方法 | Beausoft Bolg | 嘿嘿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="其中包含有先序遍历、中序遍历、后序遍历以及广度优先遍历四种遍历树的方法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中树和树的几种常规遍历方法">
+<meta property="og:url" content="https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/index.html">
+<meta property="og:site_name" content="Beausoft Bolg">
+<meta property="og:description" content="其中包含有先序遍历、中序遍历、后序遍历以及广度优先遍历四种遍历树的方法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+<meta property="og:updated_time" content="2018-03-06T14:51:30.992Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java中树和树的几种常规遍历方法">
+<meta name="twitter:description" content="其中包含有先序遍历、中序遍历、后序遍历以及广度优先遍历四种遍历树的方法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+    
+        <link rel="alternate" type="application/atom+xml" title="Beausoft Bolg" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">呵呵</h5>
+          <a href="mailto:546168949@163.com" title="546168949@163.com" class="mail">546168949@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/beausoft" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java中树和树的几种常规遍历方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java中树和树的几种常规遍历方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-06T14:50:33.000Z" itemprop="datePublished" class="page-time">
+  2018-03-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-Java中树和树的几种常规遍历方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java中树和树的几种常规遍历方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-06 22:50:33" datetime="2018-03-06T14:50:33.000Z"  itemprop="datePublished">2018-03-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>其中包含有先序遍历、中序遍历、后序遍历以及广度优先遍历四种遍历树的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br></pre></td><td class="code"><pre><span class="line">package com.ietree.basic.datastructure.tree.binarytree;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayDeque;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by ietree</span><br><span class="line"> * 2017/5/1</span><br><span class="line"> */</span><br><span class="line">public class ThreeLinkBinTree&lt;E&gt; &#123;</span><br><span class="line"></span><br><span class="line">    public static class TreeNode &#123;</span><br><span class="line"></span><br><span class="line">        Object data;</span><br><span class="line">        TreeNode left;</span><br><span class="line">        TreeNode right;</span><br><span class="line">        TreeNode parent;</span><br><span class="line"></span><br><span class="line">        public TreeNode() &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public TreeNode(Object data) &#123;</span><br><span class="line">            this.data = data;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public TreeNode(Object data, TreeNode left, TreeNode right, TreeNode parent) &#123;</span><br><span class="line">            this.data = data;</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.right = right;</span><br><span class="line">            this.parent = parent;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private TreeNode root;</span><br><span class="line"></span><br><span class="line">    // 以默认的构造器创建二叉树</span><br><span class="line">    public ThreeLinkBinTree() &#123;</span><br><span class="line">        this.root = new TreeNode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 以指定根元素创建二叉树</span><br><span class="line">    public ThreeLinkBinTree(E data) &#123;</span><br><span class="line">        this.root = new TreeNode(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 为指定节点添加子节点</span><br><span class="line">     *</span><br><span class="line">     * @param parent 需要添加子节点的父节点的索引</span><br><span class="line">     * @param data   新子节点的数据</span><br><span class="line">     * @param isLeft 是否为左节点</span><br><span class="line">     * @return 新增的节点</span><br><span class="line">     */</span><br><span class="line">    public TreeNode addNode(TreeNode parent, E data, boolean isLeft) &#123;</span><br><span class="line"></span><br><span class="line">        if (parent == null) &#123;</span><br><span class="line">            throw new RuntimeException(parent + &quot;节点为null， 无法添加子节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (isLeft &amp;&amp; parent.left != null) &#123;</span><br><span class="line">            throw new RuntimeException(parent + &quot;节点已有左子节点，无法添加左子节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (!isLeft &amp;&amp; parent.right != null) &#123;</span><br><span class="line">            throw new RuntimeException(parent + &quot;节点已有右子节点，无法添加右子节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        TreeNode newNode = new TreeNode(data);</span><br><span class="line">        if (isLeft) &#123;</span><br><span class="line">            // 让父节点的left引用指向新节点</span><br><span class="line">            parent.left = newNode;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 让父节点的left引用指向新节点</span><br><span class="line">            parent.right = newNode;</span><br><span class="line">        &#125;</span><br><span class="line">        // 让新节点的parent引用到parent节点</span><br><span class="line">        newNode.parent = parent;</span><br><span class="line">        return newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 判断二叉树是否为空</span><br><span class="line">    public boolean empty() &#123;</span><br><span class="line">        // 根据元素判断二叉树是否为空</span><br><span class="line">        return root.data == null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 返回根节点</span><br><span class="line">    public TreeNode root() &#123;</span><br><span class="line">        if (empty()) &#123;</span><br><span class="line">            throw new RuntimeException(&quot;树为空，无法访问根节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 返回指定节点（非根节点）的父节点</span><br><span class="line">    public E parent(TreeNode node) &#123;</span><br><span class="line">        if (node == null) &#123;</span><br><span class="line">            throw new RuntimeException(&quot;节点为null，无法访问其父节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return (E) node.parent.data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 返回指定节点（非叶子）的左子节点，当左子节点不存在时返回null</span><br><span class="line">    public E leftChild(TreeNode parent) &#123;</span><br><span class="line">        if (parent == null) &#123;</span><br><span class="line">            throw new RuntimeException(parent + &quot;节点为null，无法添加子节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return parent.left == null ? null : (E) parent.left.data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 返回指定节点（非叶子）的右子节点，当右子节点不存在时返回null</span><br><span class="line">    public E rightChild(TreeNode parent) &#123;</span><br><span class="line">        if (parent == null) &#123;</span><br><span class="line">            throw new RuntimeException(parent + &quot;节点为null，无法添加子节点&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return parent.right == null ? null : (E) parent.right.data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 返回该二叉树的深度</span><br><span class="line">    public int deep() &#123;</span><br><span class="line">        // 获取该树的深度</span><br><span class="line">        return deep(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 这是一个递归方法：每一棵子树的深度为其所有子树的最大深度 + 1</span><br><span class="line">    private int deep(TreeNode node) &#123;</span><br><span class="line">        if (node == null) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        // 没有子树</span><br><span class="line">        if (node.left == null &amp;&amp; node.right == null) &#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            int leftDeep = deep(node.left);</span><br><span class="line">            int rightDeep = deep(node.right);</span><br><span class="line">            // 记录其所有左、右子树中较大的深度</span><br><span class="line">            int max = leftDeep &gt; rightDeep ? leftDeep : rightDeep;</span><br><span class="line">            // 返回其左右子树中较大的深度 + 1</span><br><span class="line">            return max + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 实现先序遍历</span><br><span class="line">    // 1、访问根节点</span><br><span class="line">    // 2、递归遍历左子树</span><br><span class="line">    // 3、递归遍历右子树</span><br><span class="line">    public List&lt;TreeNode&gt; preIterator() &#123;</span><br><span class="line">        return preIterator(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private List&lt;TreeNode&gt; preIterator(TreeNode node) &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;TreeNode&gt;();</span><br><span class="line">        // 处理根节点</span><br><span class="line">        list.add(node);</span><br><span class="line"></span><br><span class="line">        // 递归处理左子树</span><br><span class="line">        if (node.left != null) &#123;</span><br><span class="line">            list.addAll(preIterator(node.left));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 递归处理右子树</span><br><span class="line">        if (node.right != null) &#123;</span><br><span class="line">            list.addAll(preIterator(node.right));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return list;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 实现中序遍历</span><br><span class="line">    // 1、递归遍历左子树</span><br><span class="line">    // 2、访问根节点</span><br><span class="line">    // 3、递归遍历右子树</span><br><span class="line">    public List&lt;TreeNode&gt; inIterator() &#123;</span><br><span class="line">        return inIterator(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private List&lt;TreeNode&gt; inIterator(TreeNode node) &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;TreeNode&gt;();</span><br><span class="line"></span><br><span class="line">        // 递归处理左子树</span><br><span class="line">        if (node.left != null) &#123;</span><br><span class="line">            list.addAll(inIterator(node.left));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 处理根节点</span><br><span class="line">        list.add(node);</span><br><span class="line"></span><br><span class="line">        // 递归处理右子树</span><br><span class="line">        if (node.right != null) &#123;</span><br><span class="line">            list.addAll(inIterator(node.right));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return list;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 实现后序遍历</span><br><span class="line">    // 1、递归遍历左子树</span><br><span class="line">    // 2、递归遍历右子树</span><br><span class="line">    // 3、访问根节点</span><br><span class="line">    public List&lt;TreeNode&gt; postIterator() &#123;</span><br><span class="line">        return postIterator(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private List&lt;TreeNode&gt; postIterator(TreeNode node) &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;TreeNode&gt;();</span><br><span class="line"></span><br><span class="line">        // 递归处理左子树</span><br><span class="line">        if (node.left != null) &#123;</span><br><span class="line">            list.addAll(postIterator(node.left));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 递归处理右子树</span><br><span class="line">        if (node.right != null) &#123;</span><br><span class="line">            list.addAll(postIterator(node.right));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 处理根节点</span><br><span class="line">        list.add(node);</span><br><span class="line"></span><br><span class="line">        return list;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 实现广度优先遍历</span><br><span class="line">    // 广度优先遍历又称为按层遍历，整个遍历算法先遍历二叉树的第一层（根节点），再遍历根节点的两个子节点（第二层），以此类推</span><br><span class="line">    public List&lt;TreeNode&gt; breadthFirst() &#123;</span><br><span class="line"></span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new ArrayDeque&lt;TreeNode&gt;();</span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;TreeNode&gt;();</span><br><span class="line">        if (root != null) &#123;</span><br><span class="line">            // 将根元素加入“队列”</span><br><span class="line">            queue.offer(root);</span><br><span class="line">        &#125;</span><br><span class="line">        while (!queue.isEmpty()) &#123;</span><br><span class="line">            // 将该队列的“队尾”的元素添加到List中</span><br><span class="line">            list.add(queue.peek());</span><br><span class="line">            TreeNode p = queue.poll();</span><br><span class="line">            // 如果左子节点不为null，将它加入“队列”</span><br><span class="line">            if (p.left != null) &#123;</span><br><span class="line">                queue.offer(p.left);</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果右子节点不为null，将它加入“队列”</span><br><span class="line">            if (p.right != null) &#123;</span><br><span class="line">                queue.offer(p.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来源：<a href="https://www.cnblogs.com/Dylansuns/p/6792108.html?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://www.cnblogs.com/Dylansuns/p/6792108.html?utm_source=itdadao&amp;utm_medium=referral</a></p>
+<p>可参考相关的文档：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/simplepaul/p/6721687.html" target="_blank" rel="noopener">https://www.cnblogs.com/simplepaul/p/6721687.html</a></li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-06T14:51:30.992Z" itemprop="dateUpdated">2018-03-06 22:51:30</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/03/06/Java中树和树的几种常规遍历方法/" target="_blank" rel="external">https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://beausoft.github.io">
+            <img src="/img/avatar.jpg" alt="呵呵">
+            呵呵
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/&title=《Java中树和树的几种常规遍历方法》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/&title=《Java中树和树的几种常规遍历方法》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java中树和树的几种常规遍历方法》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/06/聊聊并发-Java中的Copy-On-Write容器/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">聊聊并发-Java中的Copy-On-Write容器</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>呵呵 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/&title=《Java中树和树的几种常规遍历方法》 — Beausoft Bolg&pic=https://beausoft.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/&title=《Java中树和树的几种常规遍历方法》 — Beausoft Bolg&source=呵呵" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java中树和树的几种常规遍历方法》 — Beausoft Bolg&url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/&via=https://beausoft.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://beausoft.github.io/2018/03/06/Java中树和树的几种常规遍历方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aS27jMBAFwNz/0g4wqwESy68/VLQorQLEklg0wKZf8+srvl7/ruS/r/+u6yf8vGsyhtGFh4eH1xr6u+saUB10MhHVe6/Hg4eHh3eOlyz3k89fT0d1IvJJwcPDw/tb3qRgVAeavxcPDw/vybw8IMiDg+pWHg8PD+85vOQ11WV6696bshY8PDy8mFdtgD3h74P9PTw8PLxBVz0vFdXmVjV66I0WDw8P7wRvPpRrai+q2A2C8fDw8O7k5cXguvG/FQo3Q148PDy8A7x8Q5zEppNjVdXtdX5kAQ8PD2+LlxeDyTLdYx85boWHh4e3yqsu97ulYmub/rYw4OHh4S3xqqFqzs7j194TCltwPDw8vFVesqxvxQr3PBMPDw/vfl5vo7zQoGqVhA9sPDw8vGO8fNu6FfhWw4Xk+MIvz8HDw8O7hXddGLaOC0xOOlxP/S9bajw8PLxVXr5MV6PYpMGfb+hHDTA8PDy8VV4SCkyQvdiiGl68/SQeHh7eMV4VkDfve2FHL/D9cHQADw8Pb4k3+nkfhKo9THXiCl0+PDw8vCVesij3WlPVNli1JJTvxcPDwxvz5ktw9a78YNbChYeHh3eYNx9EdemfPCHauOPh4eEd4CWvn1O3DmDlb4m+Qzw8PLwBb74Fr0a61adVDyss/8LAw8PDaw26F7zm299eCBIVITw8PLxbeL3At7qgb0W6H4oEHh4e3irvVbySSZlEFdXo4UPpwsPDwzvAm8QQ+Weqr6+WjYUYFw8PD6/ISxboauTaOzSQNMbKkS4eHh7eMd7W5rgaBE9K0fUY8PDw8J7Dy49PTZb+EQkPDw/vMbxehJofxurFymuFAQ8PD6/I22r5X5Pyu6rtt4WsBQ8PD2/cT1+7uThBPWSzs4eHh4dX430DTFpekzvUIVcAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
